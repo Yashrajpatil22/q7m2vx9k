@@ -7,11 +7,20 @@ from services.metrics import calculate_accuracy_metrics
 from fastapi import FastAPI, HTTPException
 
 from services.elexon import fetch_actual_wind_generation
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title="Wind Generation Analytics API",
     description="API for UK wind generation forecasts and actuals.",
     version="1.0.0",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=False,
+    allow_methods=["GET"],
+    allow_headers=["*"],
 )
 
 
