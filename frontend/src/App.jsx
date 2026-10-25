@@ -1,11 +1,10 @@
 import './App.css'
+import Dashboard from './pages/Dashboard.jsx'
 
 function App() {
 
   return (
-    <>
-      <h1 className="text-3xl font-bold">Welcome to the Wind Generation Analytics</h1>
-    </>
+   <Dashboard /> 
   )
 }
 
